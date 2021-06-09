@@ -1,25 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import NavBar from './components/NavBar'
+import CartWidget from './components/CartWidget'
+import ItemListContainer from './components/ItemListContainer'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavBar/>
+      <div className="first-box">
+        <ItemListContainer image="https://www.guantexindustrial.com.ar/707-large_default/remera-algodon-jersey-blanco-talle-xxxl.jpg" productName="Remera 1" productPrice="$999"/>
+        <ItemListContainer image="https://www.guantexindustrial.com.ar/707-large_default/remera-algodon-jersey-blanco-talle-xxxl.jpg" productName="Remera 2" productPrice="$999"/>
+        <ItemListContainer image="https://www.guantexindustrial.com.ar/707-large_default/remera-algodon-jersey-blanco-talle-xxxl.jpg" productName="Remera 3" productPrice="$999"/>
+        <ItemListContainer image="https://www.guantexindustrial.com.ar/707-large_default/remera-algodon-jersey-blanco-talle-xxxl.jpg" productName="Remera 4" productPrice="$999"/>
+      </div>
     </div>
+
   );
 }
+
 
 export default App;
