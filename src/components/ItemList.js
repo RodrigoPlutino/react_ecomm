@@ -1,20 +1,23 @@
-import React, { Component } from 'react';
+import React from 'react';
 import '../styles/stylesheet.css'
-import ItemListContainer from '../components/ItemListContainer'
+import ItemListContainer from './ItemListContainer'
 
-class ItemList extends Component {
-    render () {
+
+function ItemList() {
+
+    const ITEMS = [
+    {"id":1,"productName":"Bat, little brown","price":"$47.26","maxStock":4,"image":"https://www.guantexindustrial.com.ar/707-large_default/remera-algodon-jersey-blanco-talle-xxxl.jpg"},
+    {"id":2,"productName":"Giant heron","price":"$57.20","maxStock":5,"image":"https://www.guantexindustrial.com.ar/707-large_default/remera-algodon-jersey-blanco-talle-xxxl.jpg"},
+    {"id":3,"productName":"Crab (unidentified)","price":"$89.18","maxStock":3,"image":"https://www.guantexindustrial.com.ar/707-large_default/remera-algodon-jersey-blanco-talle-xxxl.jpg"},
+    {"id":4,"productName":"Long-finned pilot whale","price":"$69.88","maxStock":4,"image":"https://www.guantexindustrial.com.ar/707-large_default/remera-algodon-jersey-blanco-talle-xxxl.jpg"},
+    {"id":5,"productName":"Secretary bird","price":"$144.96","maxStock":1,"image":"https://www.guantexindustrial.com.ar/707-large_default/remera-algodon-jersey-blanco-talle-xxxl.jpg"}];
+
     return (
-        <div>
         <div className="first-box">
-            <ItemListContainer image="https://www.guantexindustrial.com.ar/707-large_default/remera-algodon-jersey-blanco-talle-xxxl.jpg" productName="Remera 1" productPrice="$999"/>
-            <ItemListContainer image="https://www.guantexindustrial.com.ar/707-large_default/remera-algodon-jersey-blanco-talle-xxxl.jpg" productName="Remera 2" productPrice="$999"/>
-            <ItemListContainer image="https://www.guantexindustrial.com.ar/707-large_default/remera-algodon-jersey-blanco-talle-xxxl.jpg" productName="Remera 3" productPrice="$999"/>
-            <ItemListContainer image="https://www.guantexindustrial.com.ar/707-large_default/remera-algodon-jersey-blanco-talle-xxxl.jpg" productName="Remera 4" productPrice="$999"/>
-        </div>
+            {ITEMS.map((ITEMS, index)=>{return <ItemListContainer id={index} productName={ITEMS.productName} productPrice={ITEMS.price} image={ITEMS.image} maxStock={ITEMS.maxStock}/>})}
         </div>
         )
-    }
+
 }
 
 export default ItemList;

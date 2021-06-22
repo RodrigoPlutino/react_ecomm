@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../styles/stylesheet.css'
+import CartItems from './CartItems';
 import CartWidget from './CartWidget'
-
 
 class NavBar extends Component {
     render () {
@@ -10,7 +10,7 @@ class NavBar extends Component {
             <a className="active" href="#home">Home</a>
             <a href="#news">News</a>
             <a href="#contact">Contact</a>
-            <CartWidget/>
+            <CartItems icon={<CartWidget/>}/>
         </div>
         )
     }
