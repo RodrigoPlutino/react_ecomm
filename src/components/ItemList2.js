@@ -1,10 +1,11 @@
 import React from 'react';
 import '../styles/stylesheet.css'
+import ItemListContainer from './ItemListContainer'
 
 
 
 
-function CartItems(props) {
+function ItemList2(props) {
 
     const ITEMS = [
         {"id":1,"productName":"Bat, little brown","price":"$47.26","maxStock":4,"image":"https://www.guantexindustrial.com.ar/707-large_default/remera-algodon-jersey-blanco-talle-xxxl.jpg"},
@@ -38,4 +39,4 @@ function CartItems(props) {
         )
 }
 
-export default CartItems;
+export default ItemList2;
