@@ -1,23 +1,57 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../styles/stylesheet.css'
-import ItemListContainer from './ItemListContainer'
+import Item from './Item'
+
+
 
 
 function ItemList() {
 
-    const ITEMS = [
-    {"id":1,"productName":"Bat, little brown","price":"$47.26","maxStock":4,"image":"https://www.guantexindustrial.com.ar/707-large_default/remera-algodon-jersey-blanco-talle-xxxl.jpg"},
-    {"id":2,"productName":"Giant heron","price":"$57.20","maxStock":5,"image":"https://www.guantexindustrial.com.ar/707-large_default/remera-algodon-jersey-blanco-talle-xxxl.jpg"},
-    {"id":3,"productName":"Crab (unidentified)","price":"$89.18","maxStock":3,"image":"https://www.guantexindustrial.com.ar/707-large_default/remera-algodon-jersey-blanco-talle-xxxl.jpg"},
-    {"id":4,"productName":"Long-finned pilot whale","price":"$69.88","maxStock":4,"image":"https://www.guantexindustrial.com.ar/707-large_default/remera-algodon-jersey-blanco-talle-xxxl.jpg"},
-    {"id":5,"productName":"Secretary bird","price":"$144.96","maxStock":1,"image":"https://www.guantexindustrial.com.ar/707-large_default/remera-algodon-jersey-blanco-talle-xxxl.jpg"}];
+    const [Items, setItems] = useState();
 
-    return (
-        <div className="first-box">
-            {ITEMS.map((ITEMS, index)=>{return <ItemListContainer id={index} productName={ITEMS.productName} productPrice={ITEMS.price} image={ITEMS.image} maxStock={ITEMS.maxStock}/>})}
-        </div>
+    const ITEMS_API = [
+        {"id":1,"productName":"Bat, little brown","price":"$47.26","maxStock":4,"image":"https://www.guantexindustrial.com.ar/707-large_default/remera-algodon-jersey-blanco-talle-xxxl.jpg"},
+        {"id":2,"productName":"Giant heron","price":"$57.20","maxStock":5,"image":"https://www.guantexindustrial.com.ar/707-large_default/remera-algodon-jersey-blanco-talle-xxxl.jpg"},
+        {"id":3,"productName":"Crab (unidentified)","price":"$89.18","maxStock":3,"image":"https://www.guantexindustrial.com.ar/707-large_default/remera-algodon-jersey-blanco-talle-xxxl.jpg"},
+        {"id":4,"productName":"Long-finned pilot whale","price":"$69.88","maxStock":4,"image":"https://www.guantexindustrial.com.ar/707-large_default/remera-algodon-jersey-blanco-talle-xxxl.jpg"},
+        {"id":5,"productName":"Secretary bird","price":"$144.96","maxStock":1,"image":"https://www.guantexindustrial.com.ar/707-large_default/remera-algodon-jersey-blanco-talle-xxxl.jpg"}];
+
+
+    let miPromesa = new Promise((resolve, reject) => {
+        setTimeout(function () {
+            const error = false;
+            if (!error) {
+                resolve(ITEMS_API);
+            }
+            reject("Error, obteniendo los datos..");
+        }, 1000);
+    })
+
+    miPromesa.then(function (valor) {
+        setItems(valor);
+    }).catch(
+        function (error) {
+            console.log(error);
+        }
+    )
+
+        return (
+            <div className="first-box">
+            {Items === null? (<h3>Cargando..</h3>) : (Items.map((Item, index)=>{
+                return(
+                <Item
+                id={index}
+                productName={Item.productName}
+                productPrice={Item.price}
+                image={Item.image}
+                maxStock={Item.maxStock}
+                unidades="1"
+                />
+                );
+            })
+            )}
+            </div>
         )
-
 }
 
 export default ItemList;
