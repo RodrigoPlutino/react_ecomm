@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import '../styles/stylesheet.css'
-import ItemList from '../components/ItemList'
+import '../styles/stylesheet.css';
+import ItemList from '../components/ItemList';
+import FetchAPI from './FetchAPI';
 
 
 function ItemListContainer() {
@@ -8,7 +9,7 @@ function ItemListContainer() {
 
 return (
         <div>
-            <ItemList/>
+            <FetchAPI/>
         </div>
 )
 }
