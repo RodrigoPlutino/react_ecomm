@@ -34,8 +34,6 @@ function ItemList() {
 
     miPromesa.then(function(valor){
         setItems(valor)
-        console.log('valor -->', valor)
-        console.log('items -->', items)
     }).catch(
         function(error) {
             console.log(error)
