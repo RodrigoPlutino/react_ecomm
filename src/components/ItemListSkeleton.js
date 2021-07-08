@@ -8,7 +8,7 @@ import {Link} from 'react-router-dom';
 
 
 
-function Item(props) {
+function ItemListSkeleton(props) {
 
 
     return (
@@ -28,7 +28,7 @@ function Item(props) {
     )
 }
 
-export default Item;
+export default ItemListSkeleton;
 
 
 

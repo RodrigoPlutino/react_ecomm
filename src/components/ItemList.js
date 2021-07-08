@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../styles/stylesheet.css";
-import Item from "./Item";
+import ItemListSkeleton from "./ItemListSkeleton";
 import ItemLoader from "./ItemLoader";
 <link
   rel="stylesheet"
@@ -38,7 +38,7 @@ function FetchAPI(props) {
           })
         : data.map((item) => {
             return (
-              <Item
+              <ItemListSkeleton
                 id={item.id}
                 productName={item.title}
                 productPrice={item.price}

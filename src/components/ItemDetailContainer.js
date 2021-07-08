@@ -1,10 +1,10 @@
 import React from 'react';
-import ItemDetail2 from './ItemDetail2';
+import ItemDetail from './ItemDetail';
 
 function ItemDetailContainer(props) {
 
     return (
-        <ItemDetail2/>
+        <ItemDetail/>
     )
 }
 
