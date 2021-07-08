@@ -10,9 +10,9 @@ function NavBar() {
 
     return (
         <nav className="topnav">
-            <NavLink className="col-1" activeClassName="selected" exact to="/">Home</NavLink>
-            <NavLink className="col-1" activeClassName="selected" to="/Products">Products</NavLink>
-            <NavLink className="col-1" activeClassName="selected" to="/Contact">xxx</NavLink>
+            <NavLink className="col-1" activeClassName="selected" to="/home">Home</NavLink>
+            <NavLink className="col-1" activeClassName="selected" to="/products">Products</NavLink>
+            <NavLink className="col-1" activeClassName="selected" to="/contact">Contact</NavLink>
             <CartItems className="col-1" icon={<CartWidget/>}/>
         </nav>
     )

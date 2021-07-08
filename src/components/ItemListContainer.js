@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../styles/stylesheet.css';
 import ItemList from '../components/ItemList';
-import FetchAPI from './FetchAPI';
+import FetchAPI from './ItemList';
 
 
 function ItemListContainer() {
